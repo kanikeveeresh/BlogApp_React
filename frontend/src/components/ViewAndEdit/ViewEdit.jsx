@@ -22,7 +22,7 @@ function ViewEdit() {
   const userEmail = localStorage.getItem('email');
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/posts/${slug}`)
+    axios.get(`https://blogapp-backend-wa0s.onrender.com/api/posts/${slug}`)
       .then((res) => {
         setPost(res.data);
         setTitle(res.data.title);
@@ -46,7 +46,7 @@ function ViewEdit() {
   const handleUpdate = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:5000/api/posts/${slug}`, { title, content, slug: newSlug, });
+      await axios.put(`https://blogapp-backend-wa0s.onrender.com/api/posts/${slug}`, { title, content, slug: newSlug, });
       setMessage('Post updated successfully');
       setIsEditMode(false);
       navigate(`/api/posts/dashboard`);
@@ -58,7 +58,7 @@ function ViewEdit() {
   const handleDelete = async () => {
     if (!window.confirm('Are you sure to delete this post?')) return;
     try {
-      await axios.delete(`http://localhost:5000/api/posts/${slug}`);
+      await axios.delete(`https://blogapp-backend-wa0s.onrender.com/api/posts/${slug}`);
       navigate('/api/posts/dashboard');
     } catch (err) {
       setMessage('Failed to delete post');

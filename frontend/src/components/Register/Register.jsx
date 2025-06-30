@@ -25,7 +25,7 @@ function Register() {
 
     const CreateAccount = async() => {
         try{
-            await axios.post("http://localhost:5000/api/signup", {
+            await axios.post("https://blogapp-backend-wa0s.onrender.com/api/signup", {
                 email: email,
                 password: password
             })

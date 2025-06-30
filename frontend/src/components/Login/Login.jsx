@@ -12,7 +12,7 @@ function Login() {
 
   const Login = async() => {
     try {
-      const response = await axios.post("http://localhost:5000/api/login", {
+      const response = await axios.post("https://blogapp-backend-wa0s.onrender.com/api/login", {
         email: email,
         password: password
       })

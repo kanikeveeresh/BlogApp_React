@@ -13,7 +13,7 @@ function Dashboard() {
 
   useEffect(() => {
     if (!email) return;
-    axios.post(`http://localhost:5000/api/posts/dashboard`, { email })
+    axios.post(`https://blogapp-backend-wa0s.onrender.com/api/posts/dashboard`, { email })
       .then(res => setPosts(res.data))
       .catch(err => console.error(err));
   }, [email]);
@@ -34,14 +34,13 @@ function Dashboard() {
   const handleDelete = async (slug) => {
     if (!window.confirm('Are you sure to delete this post?')) return;
     try {
-      await axios.delete(`http://localhost:5000/api/posts/${slug}`);
+      await axios.delete(`https://blogapp-backend-wa0s.onrender.com/api/posts/${slug}`);
       setPosts(posts.filter(post => post.slug !== slug));
     } catch (err) {
       console.error('Failed to delete post:', err);
     }
   };
 
-  // Pagination logic
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);

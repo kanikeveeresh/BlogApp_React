@@ -10,7 +10,7 @@ function Home() {
   const [postsPerPage, setPostsPerPage] = useState(6);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/posts')
+    axios.get('https://blogapp-backend-wa0s.onrender.com/api/posts')
       .then(res => setPosts(res.data))
       .catch(err => console.error(err));
   }, []);

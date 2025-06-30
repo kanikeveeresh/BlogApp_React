@@ -26,7 +26,7 @@ function CreatePost() {
     }
 
     try {
-      const response = await axios.post('http://localhost:5000/api/posts/create', {
+      const response = await axios.post('https://blogapp-backend-wa0s.onrender.com/api/posts/create', {
         title,
         content,
         slug,
