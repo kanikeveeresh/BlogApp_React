@@ -1,0 +1,73 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: gray;
+  padding: 15px;
+  position: relative;
+}
+
+.Logo {
+  text-decoration: none;
+  color: white;
+}
+
+.Menu {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+}
+
+.blogBtn,
+.logBtn {
+  width: 100px;
+  height: 30px;
+  cursor: pointer;
+  background-color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+/* Hamburger menu styles */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 3px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .Menu {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #444;
+    padding: 1rem;
+    position: absolute;
+    top: 60px;
+    right: 15px;
+    z-index: 999;
+    border-radius: 6px;
+  }
+
+  .Menu.active {
+    display: flex;
+  }
+
+  .Menu button {
+    margin-bottom: 10px;
+    width: 120px;
+  }
+}
